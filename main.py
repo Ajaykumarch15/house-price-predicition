@@ -77,3 +77,15 @@ Y_pred = predict(X, W, b)
 print("\nPredictions vs Actual values:")
 for pred, actual in zip(Y_pred[:5], Y[:5]):
     print(f"Predicted: {pred[0]:.2f}, Actual: {actual[0]}")
+
+import pickle
+
+# Load the trained model
+with open('house_price_model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
+# Save model to download
+with open('downloaded_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
+
+print("Model downloaded successfully!")
