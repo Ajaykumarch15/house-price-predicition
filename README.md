@@ -49,6 +49,22 @@ To train the model manually, run:
 python train.py
 ```
 
+## Downloading the Model
+To download the trained model, use the following code:
+```python
+import pickle
+
+# Load the trained model
+with open('house_price_model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
+# Save model to download
+with open('downloaded_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
+
+print("Model downloaded successfully!")
+```
+
 ## Usage
 1. Enter the house details in the Streamlit UI.
 2. The model will normalize the inputs and predict the house price.
